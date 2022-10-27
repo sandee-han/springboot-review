@@ -1,5 +1,6 @@
 package com.example.springbootreview.controller;
 
+import com.example.springbootreview.dto.MemberDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -44,4 +45,10 @@ public class GetController {
         });
         return null;
     }
+
+    @GetMapping(value = "/request3")
+    public String getRequestParam3(MemberDto memberDto) {
+        return memberDto.toString();
+    }
+
 }
