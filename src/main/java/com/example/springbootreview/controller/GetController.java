@@ -1,9 +1,6 @@
 package com.example.springbootreview.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class GetController {
@@ -23,6 +20,15 @@ public class GetController {
         return "Hello world";
     }
 
+    @GetMapping(value = "/variable1/{variable}")
+    public String getVariable1(@PathVariable String variable){
+        return variable;
+    }
+
+    @GetMapping(value = "/variable2/{variable}")
+    public String getVariable2(@PathVariable("variable") String var) {
+        return var;
+    }
 
 
 }
