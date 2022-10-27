@@ -1,6 +1,7 @@
 package com.example.springbootreview.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -10,5 +11,9 @@ public class GetController {
     public String hello() {
         return "Hello";
     }
-    
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String getHello() {
+        return "Hello world";
+    }
+
 }
