@@ -1,5 +1,6 @@
 package com.example.springbootreview.controller;
 
+import com.example.springbootreview.dto.MemberDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
@@ -18,5 +19,10 @@ public class PostController {
         StringBuilder sb = new StringBuilder();
         postData.entrySet().forEach(map->sb.append(map.getKey() + ":" + map.getValue() + "\n"));
         return sb.toString();
+    }
+
+    @PostMapping("/member2")
+    public String postMemberDto(@RequestBody MemberDto memberDto) {
+        return memberDto.toString();
     }
 }
