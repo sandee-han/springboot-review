@@ -1,4 +1,4 @@
-package com.example.springbootreview;
+package com.example.springbootreview.domain;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
