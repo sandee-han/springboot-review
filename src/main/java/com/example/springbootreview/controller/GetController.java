@@ -2,6 +2,8 @@ package com.example.springbootreview.controller;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 public class GetController {
 
@@ -35,4 +37,11 @@ public class GetController {
         return name + " " + email + " " + organization;
     }
 
+    @GetMapping(value = "/request2")
+    public String getRequestParam2(@RequestParam Map<String, String> param) {
+        param.entrySet().forEach(map->{
+            System.out.printf("key:%s value:%s\n", map.getKey(), map.getValue());
+        });
+        return null;
+    }
 }
